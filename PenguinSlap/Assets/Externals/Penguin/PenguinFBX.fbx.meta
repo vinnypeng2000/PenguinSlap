@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 8d64aa435677a064ca9f3accc6aa6c9f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100397
+  packageName: Low Poly Imperial Penguin
+  packageVersion: 1.0
+  assetPath: Assets/Penguin/PenguinFBX.fbx
+  uploadId: 205921
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -28,7 +35,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -86,7 +93,87 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: PenguinFBX(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: PenguinFBX(Clone)
+      position: {x: 0.06630206, y: 0.0019452783, z: -0.06252052}
+      rotation: {x: 9.336226e-15, y: -0.7071067, z: 9.336224e-15, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: PenguinFBX(Clone)
+      position: {x: 0.062520504, y: 3.660335, z: 0.0019452699}
+      rotation: {x: 0.50000006, y: -0.5, z: 0.49999994, w: -0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: root
+      parentName: Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.50000006, y: 0.49999997, z: -0.49999997, w: 0.50000006}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine0
+      parentName: Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.000000040370466, y: 0.06636478, z: 0.00000018068664, w: 0.9977954}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Head
+      parentName: Spine0
+      position: {x: -2.7615995, y: 0.0000005262195, z: -0.7459469}
+      rotation: {x: -0.00000043366742, y: -0.7616526, z: -0.00000062416973, w: 0.6479856}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: LeftShoulder
+      parentName: Spine0
+      position: {x: -1.1944811, y: 1.1727331, z: 0.07701929}
+      rotation: {x: 0.5271257, y: 0.18676503, z: 0.8007315, w: -0.21467757}
+      scale: {x: 1, y: 0.9999999, z: 0.99999976}
+    - name: LeftArm
+      parentName: LeftShoulder
+      position: {x: -1.3634298, y: 0.00000019612727, z: 3.44304e-10}
+      rotation: {x: -0.026786901, y: -0.01816592, z: -0.13732448, w: 0.9899972}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+    - name: RightShoulder
+      parentName: Spine0
+      position: {x: -1.1944817, y: -1.1727333, z: 0.07701875}
+      rotation: {x: -0.6310888, y: 0.15597296, z: 0.72234106, w: 0.235845}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: RightArm
+      parentName: RightShoulder
+      position: {x: -1.3634298, y: 0.00000013471985, z: 2.76838e-10}
+      rotation: {x: 0.02678697, y: -0.018165888, z: 0.13732456, w: 0.9899972}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.99999994}
+    - name: Spine1
+      parentName: Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.06904335, y: -0.0037521124, z: 0.99381477, w: -0.086897776}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Tail
+      parentName: Spine1
+      position: {x: -2.8147159, y: 0.000000509077, z: 0.49322054}
+      rotation: {x: 0.00000026892812, y: 0.5357955, z: -0.0000003341364, w: 0.8443478}
+      scale: {x: 0.9999998, y: 1, z: 0.9999998}
+    - name: LeftHip
+      parentName: Spine1
+      position: {x: -1.8332831, y: -0.78760207, z: -0.035142835}
+      rotation: {x: -0.00000012193306, y: -0.09297693, z: -0.00000008980067, w: 0.9956683}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: LeftFoot
+      parentName: LeftHip
+      position: {x: -1.5142037, y: 0.00000008289219, z: 0.00000002059751}
+      rotation: {x: 0.00000022326728, y: -0.60155946, z: 0.00000025065214, w: 0.79882807}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999997}
+    - name: RightHip
+      parentName: Spine1
+      position: {x: -1.8332826, y: 0.7876023, z: -0.035143305}
+      rotation: {x: -0.00000012193306, y: -0.09297693, z: -0.00000008980067, w: 0.9956683}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: RightFoot
+      parentName: RightHip
+      position: {x: -1.5142038, y: 0.0000002021015, z: 7.94523e-10}
+      rotation: {x: -0.055726986, y: -0.58021235, z: -0.06678112, w: 0.8098076}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999997}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -97,13 +184,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 1
@@ -111,10 +198,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 100397
-  packageName: Low Poly Imperial Penguin
-  packageVersion: 1.0
-  assetPath: Assets/Penguin/PenguinFBX.fbx
-  uploadId: 205921
