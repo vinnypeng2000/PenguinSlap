@@ -406,6 +406,7 @@
 -analyzer:"D:/6000.0.40f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/EnemyBehavior.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/SlapDetctor.cs"
 "Assets/Scripts/TimeManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

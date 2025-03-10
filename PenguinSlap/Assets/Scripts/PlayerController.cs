@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -32,11 +33,14 @@ public class PlayerController : MonoBehaviour
     public Transform rightArm;
     private bool isSlapping = false;
     private bool wasSliding = false;
+    private List<EnemyBehavior> enemiesHit = new List<EnemyBehavior>();
+    public AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animation>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -165,23 +169,39 @@ public class PlayerController : MonoBehaviour
         isRecovering = false;
     }
 
+    public void AddEnemyToList(EnemyBehavior enemy)
+    {
+        if (!enemiesHit.Contains(enemy))
+        {
+            enemiesHit.Add(enemy);
+        }
+    }
+
+    public void RemoveEnemyFromList(EnemyBehavior enemy)
+    {
+        if (enemiesHit.Contains(enemy))
+        {
+            enemiesHit.Remove(enemy);
+        }
+    }
+
     public void OnSlap(InputAction.CallbackContext context)
     {
         if (context.performed && !isSlapping)
         {
             StartCoroutine(PerformSlap());
-            // Find all enemies in range (assuming they have the "EnemyBehavior" script attached)
-            Collider[] enemiesInRange = Physics.OverlapSphere(rightShoulder.position, 5f); // Adjust radius as needed
 
-            foreach (Collider enemyCollider in enemiesInRange)
+            // Only apply slap effect to enemies physically touched
+            foreach (EnemyBehavior enemy in enemiesHit)
             {
-                // Check if the enemy has the "EnemyBehavior" script attached
-                EnemyBehavior enemyBehavior = enemyCollider.GetComponent<EnemyBehavior>();
-                if (enemyBehavior != null)
-                {
-                    enemyBehavior.OnSlap(); // Call the OnSlap method of each enemy
-                }
+                Debug.Log("Enemy hit by slap!");
+                audioSource.Play(); // Play slap sound effect
+                enemy.OnSlap();
+                // audioSource.Stop(); // Stop slap sound effect
             }
+
+            // Clear the list after applying slap
+            enemiesHit.Clear();
         }
     }
 
@@ -214,7 +234,7 @@ public class PlayerController : MonoBehaviour
         Quaternion targetRotationArm = startRotationArm * Quaternion.Euler(-80, -80, -45);
 
         float elapsedTime = 0f;
-        float slapDuration = 0.1f;
+        float slapDuration = 0.15f;
 
         while (elapsedTime < slapDuration)
         {
