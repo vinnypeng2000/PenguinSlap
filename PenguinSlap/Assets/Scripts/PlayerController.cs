@@ -188,7 +188,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PerformSlap()
     {
         isSlapping = true;
-        Debug.Log("Slap!");
 
         if (rightShoulder == null || rightArm == null)
         {
