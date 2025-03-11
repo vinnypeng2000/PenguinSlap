@@ -43,6 +43,9 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (isPlayerInRange && player != null)
         {
+            // string enemyTag = gameObject.tag;
+            ScoreManager.Instance.AddScore(gameObject);
+
             // Calculate the direction from the enemy to the player
             Vector3 directionToPlayer = (transform.position - player.transform.position).normalized;
 

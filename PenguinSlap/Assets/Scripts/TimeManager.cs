@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Slider timeSlider;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private GameObject gameOverScreen; // UI that pops up when time reaches 0
+    [SerializeField] private TextMeshProUGUI finalScore; // UI that displays the final score
     [SerializeField] private GameObject player; // Reference to player object to disable movement
 
     private float currentTime;
@@ -53,6 +54,7 @@ public class TimeManager : MonoBehaviour
     {
         isTimerRunning = false;
         gameOverScreen.SetActive(true);
+        finalScore.text = "Final Score: " + ScoreManager.Instance.score.ToString();
 
         // Disable player movement (assuming there's a script with a method for this)
         if (player.TryGetComponent<PlayerController>(out var movementScript))
