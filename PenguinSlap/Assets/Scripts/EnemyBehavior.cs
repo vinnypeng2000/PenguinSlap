@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    public AudioSource shriekSound; // Reference to the AudioSource component
     private bool isPlayerInRange = false;
     private GameObject player; // Reference to the player
     private Vector3 flingDirection; // Direction to fling the enemy
@@ -45,6 +46,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             // string enemyTag = gameObject.tag;
             ScoreManager.Instance.AddScore(gameObject);
+            shriekSound.Play(); // Play the shriek sound effect
 
             // Calculate the direction from the enemy to the player
             Vector3 directionToPlayer = (transform.position - player.transform.position).normalized;
